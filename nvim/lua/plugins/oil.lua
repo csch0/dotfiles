@@ -11,6 +11,9 @@ return {
 			keymaps = {
 				["q"] = "actions.close",
 			},
+			view_options = {
+				show_hidden = true,
+			},
 		})
 
 		local keymap = vim.keymap

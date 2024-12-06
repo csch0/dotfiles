@@ -75,7 +75,7 @@ return {
 			keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Files in cwd" })
 			keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Recent files" })
 
-			keymap.set("n", "<leader>ft", "<cmd>Telescope treesitter<cr>", { desc = "Recent files" })
+			keymap.set("n", "<leader>ft", "<cmd>Telescope treesitter<cr>", { desc = "Treesitter" })
 
 			--- strings
 			keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "String in cwd" })
