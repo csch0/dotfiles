@@ -6,7 +6,9 @@ return {
 		self.mode = vim.fn.mode()
 	end,
 	condition = function()
-		return conditions.is_active()
+		return conditions.is_active() and not conditions.buffer_matches({
+			filetype = { "oil" },
+		})
 	end,
 	static = {
 		mode_colors_map = {
