@@ -7,7 +7,6 @@ return {
 	end,
 	condition = function()
 		return conditions.is_active() and not conditions.buffer_matches({
-			filetype = { "oil" },
 		})
 	end,
 	static = {

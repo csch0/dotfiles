@@ -1,15 +1,13 @@
 local mode = require("config.components.mode")
 local oil = require("config.components.oil")
-local files = require("config.components.files")
+local file = require("config.components.file")
 local layout = require("config.components.layout")
 
 local statusline = {
 	mode,
+	layout.Space,
 	oil,
-	layout.Space,
-	files.Path,
-	layout.Space,
-	files.Flags,
+	file,
 }
 
 return {
