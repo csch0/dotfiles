@@ -27,9 +27,20 @@ keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) 
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
 
 -- buffers
-keymap.set("n", "<a-x>", "<cmd>bd<CR>")
-keymap.set("n", "<a-j>", "<cmd>bp<CR>")
-keymap.set("n", "<a-k>", "<cmd>bn<CR>")
+keymap.set("n", "<C-b>b", "<cmd>bn<CR>", { desc = "Switch Buffer" })
+keymap.set("n", "<C-b><C-b>", "<cmd>bn<CR>", { desc = "which_key_ignore" })
+
+-- close
+keymap.set("n", "<C-b>q", "<cmd>bd<CR>", { desc = "Close Buffer" })
+keymap.set("n", "<C-b><C-q>", "<cmd>bd<CR>", { desc = "which_key_ignore" })
+
+-- next
+keymap.set("n", "<C-b>n", "<cmd>bn<CR>", { desc = "Go to the next Buffer" })
+keymap.set("n", "<C-b><C-n>", "<cmd>bn<CR>", { desc = "which_key_ignore" })
+
+-- previous
+keymap.set("n", "<C-b>N", "<cmd>bp<CR>", { desc = "Go to the previous Buffer" })
+keymap.set("n", "<C-b><C-N>", "<cmd>bp<CR>", { desc = "which_key_ignore" })
 
 keymap.set("n", "<leader>bb", "<cmd>Telescope buffers sort_mru=true<cr>", { desc = "Buffers" })
 keymap.set("n", "<leader>bx", "<cmd>bdelete<cr>", { desc = "Close" })
