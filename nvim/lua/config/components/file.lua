@@ -15,7 +15,7 @@ local File = {
 }
 
 local Path = {
-	flexible = true,
+	flexible = 5,
 	{
 		provider = function(self)
 			return vim.fn.fnamemodify(self.filename, ":.")

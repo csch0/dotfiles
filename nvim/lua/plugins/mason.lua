@@ -1,17 +1,15 @@
 return {
 	{
 		"williamboman/mason.nvim",
-		config = function()
-			require("mason").setup({
-				ui = {
-					icons = {
-						package_installed = "✓",
-						package_pending = "➜",
-						package_uninstalled = "✗",
-					},
+		opts = {
+			ui = {
+				icons = {
+					package_installed = "✓",
+					package_pending = "➜",
+					package_uninstalled = "✗",
 				},
-			})
-		end,
+			},
+		},
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
@@ -30,7 +28,8 @@ return {
 				},
 				handlers = {
 					function(server_name)
-						local capabilities = require("cmp_nvim_lsp").default_capabilities()
+						-- local capabilities = require("cmp_nvim_lsp").default_capabilities()
+						local capabilities = require("blink.cmp").get_lsp_capabilities()
 						require("lspconfig")[server_name].setup({ capabilities = capabilities })
 					end,
 					["lua_ls"] = function()
