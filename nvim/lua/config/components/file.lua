@@ -18,17 +18,29 @@ local Path = {
 	flexible = 5,
 	{
 		provider = function(self)
-			return vim.fn.fnamemodify(self.filename, ":.")
+			if #self.filename == 0 then
+				return "[No Name]"
+			else
+				return vim.fn.fnamemodify(self.filename, ":.")
+			end
 		end,
 	},
 	{
 		provider = function(self)
-			return vim.fn.pathshorten(vim.fn.fnamemodify(self.filename, ":."))
+			if #self.filename == 0 then
+				return "[No Name]"
+			else
+				return vim.fn.pathshorten(vim.fn.fnamemodify(self.filename, ":."))
+			end
 		end,
 	},
 	{
 		provider = function(self)
-			return vim.fn.fnamemodify(self.filename, ":t")
+			if #self.filename == 0 then
+				return "[No Name]"
+			else
+				return vim.fn.fnamemodify(self.filename, ":t")
+			end
 		end,
 	},
 }
