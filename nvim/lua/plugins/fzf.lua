@@ -26,6 +26,13 @@ return {
 			},
 			{ "<leader>ff", "<cmd>FzfLua files<cr>", desc = "Files" },
 			{ "<leader>fh", "<cmd>FzfLua helptags<cr>", desc = "Help" },
+			{
+				"<leader>fg",
+				function()
+					require("fzf-lua").live_grep({ prompt = "Text> " })
+				end,
+				desc = "Text",
+			},
 			{ "<leader>fk", "<cmd>FzfLua keymaps<cr>", desc = "Keymaps" },
 
 			{

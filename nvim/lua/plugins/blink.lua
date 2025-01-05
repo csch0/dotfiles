@@ -20,7 +20,12 @@ return {
 				},
 			},
 			keymap = {
-				preset = "enter",
+				["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
+				["<Tab>"] = { "accept", "fallback" },
+				["<Up>"] = { "select_prev", "fallback" },
+				["<Down>"] = { "select_next", "fallback" },
+				["<C-k>"] = { "select_prev", "fallback" },
+				["<C-j>"] = { "select_next", "fallback" },
 			},
 			sources = {
 				default = { "lsp", "path", "buffer" },
