@@ -13,7 +13,6 @@ return {
 				menu = {
 					draw = {
 						columns = {
-							{ "kind_icon" },
 							{ "label", "label_description", gap = 1 },
 							{ "kind" },
 						},
@@ -25,7 +24,16 @@ return {
 			},
 			sources = {
 				default = { "lsp", "path", "buffer" },
-				cmdline = { "path" },
+				cmdline = function()
+					local type = vim.fn.getcmdtype()
+					if type == "/" or type == "?" then
+						return { "buffer" }
+					end
+					if type == ":" or type == "@" then
+						return { "cmdline", "path" }
+					end
+					return {}
+				end,
 			},
 		},
 	},

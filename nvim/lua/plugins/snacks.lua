@@ -30,7 +30,6 @@ return {
 					{ icon = "󰒲 ", key = "m", desc = "Mason", action = ":Mason" },
 					{ icon = " ", key = "q", desc = "Quit", action = ":qa" },
 				},
-				header = [[]],
 			},
 		},
 		notifier = {},
