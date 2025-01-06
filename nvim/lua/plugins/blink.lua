@@ -6,9 +6,6 @@ return {
 		--- @module "blink.cmp"
 		--- @type blink.cmp.Config
 		opts = {
-			appearance = {
-				nerd_font_variant = "normal",
-			},
 			completion = {
 				menu = {
 					draw = {
