@@ -7,7 +7,12 @@ return {
 			"nvim-lua/plenary.nvim",
 			"nvim-tree/nvim-web-devicons",
 		},
-		opts = {},
+		opts = {
+			hide_root_node = true,
+			window = {
+				position = "right",
+			},
+		},
 		keys = {
 			{ "<leader>e", "<cmd>Neotree toggle<CR>", { desc = "Neotree" } },
 		},

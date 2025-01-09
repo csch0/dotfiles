@@ -9,12 +9,7 @@ local breadcrumbs = require("config.components.breadcrumb")
 local oil = require("config.components.oil")
 local neotree = require("config.components.neotree")
 
-local default = {
-	condition = function()
-		return conditions.buffer_matches({
-			filetype = { "neo-tree" },
-		})
-	end,
+local DefaultStatusLine = {
 	mode,
 	layout.Space,
 	file,
@@ -25,9 +20,10 @@ local default = {
 }
 
 local statusline = {
-	default,
-	-- oil,
+	fallthrough = false,
+	oil,
 	neotree,
+	DefaultStatusLine,
 }
 
 return {
