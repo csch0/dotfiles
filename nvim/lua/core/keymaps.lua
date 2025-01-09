@@ -4,7 +4,13 @@ vim.g.mapleader = " "
 local keymap = vim.keymap
 
 -- clear search highlights
-keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
+keymap.set("n", "<CR>", function()
+	if vim.v.hlsearch == 1 then
+		vim.cmd.nohl()
+	else
+		return vim.keycode("<CR>")
+	end
+end, { expr = true, silent = true })
 
 keymap.set("v", "<", "<gv", { noremap = true, silent = true })
 keymap.set("v", ">", ">gv", { noremap = true, silent = true })
@@ -13,6 +19,9 @@ keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 keymap.set({ "n", "i" }, "<C-s>", "<cmd>w<CR>")
+
+keymap.set("n", "<leader>xl", "<cmd>.lua<CR>", { desc = "Execute the current line" })
+keymap.set("n", "<leader>xx", "<cmd>source %<CR>", { desc = "Execute the current file" })
 
 -- window management
 keymap.set("n", "<leader>s|", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
