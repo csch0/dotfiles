@@ -1,16 +1,15 @@
-local Align = {
+local M = {}
+
+M.Align = {
 	provider = function()
 		return "%="
 	end,
 }
 
-local Space = {
+M.Space = {
 	provider = function()
 		return " "
 	end,
 }
 
-return {
-	Align = Align,
-	Space = Space,
-}
+return M
