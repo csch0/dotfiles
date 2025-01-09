@@ -30,7 +30,7 @@ local Icon = {
 
 return {
 	condition = function()
-		return conditions.buffer_matches({ filetype = { "oil" } })
+		return conditions.buffer_matches({ filetype = { "neo-tree" } })
 	end,
 	mode,
 	layout.Space,

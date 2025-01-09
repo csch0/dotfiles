@@ -1,19 +1,33 @@
+local conditions = require("heirline.conditions")
+
 local mode = require("config.components.mode")
-local oil = require("config.components.oil")
 local file = require("config.components.file")
 local layout = require("config.components.layout")
 local lsp = require("config.components.lsp")
 local breadcrumbs = require("config.components.breadcrumb")
 
-local statusline = {
+local oil = require("config.components.oil")
+local neotree = require("config.components.neotree")
+
+local default = {
+	condition = function()
+		return conditions.buffer_matches({
+			filetype = { "neo-tree" },
+		})
+	end,
 	mode,
 	layout.Space,
-	oil,
 	file,
 	layout.Space,
 	breadcrumbs,
 	layout.Align,
 	lsp,
+}
+
+local statusline = {
+	default,
+	-- oil,
+	neotree,
 }
 
 return {
