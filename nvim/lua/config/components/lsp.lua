@@ -2,7 +2,7 @@ local colors = require("catppuccin.palettes.macchiato")
 
 local utils = require("heirline.utils")
 
-local function line_diagnostic()
+local line_diagnostic = function()
 	local lnum = vim.api.nvim_win_get_cursor(0)[1] - 1
 	local diagnostics = vim.diagnostic.get(0, { lnum = lnum })
 	-- filter diagnostic for the current line only

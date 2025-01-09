@@ -51,7 +51,7 @@ keymap.set("n", "<C-b><C-n>", "<cmd>bn<CR>", { desc = "which_key_ignore" })
 keymap.set("n", "<C-b>N", "<cmd>bp<CR>", { desc = "Go to the previous Buffer" })
 keymap.set("n", "<C-b><C-N>", "<cmd>bp<CR>", { desc = "which_key_ignore" })
 
-keymap.set("n", "<leader>bb", "<cmd>Telescope buffers sort_mru=true<cr>", { desc = "Buffers" })
+keymap.set("n", "<leader>bb", "<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>", { desc = "Buffers" })
 keymap.set("n", "<leader>bx", "<cmd>bdelete<cr>", { desc = "Close" })
 keymap.set("n", "<leader>bn", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 

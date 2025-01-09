@@ -10,6 +10,21 @@ return {
 		keymaps = {
 			["q"] = "actions.close",
 		},
+		float = {
+			max_width = 0.8,
+			max_height = 0.85,
+			row = 0.35,
+			col = 0.5,
+			border = "rounded",
+			win_options = {
+				winhl = "Normal:Normal,FloatBorder:Normal",
+			},
+		},
+		preview = {
+			win_options = {
+				winhl = "Normal:Normal,Float:Float",
+			},
+		},
 		view_options = {
 			show_hidden = true,
 			is_always_hidden = function(name, _)
@@ -17,10 +32,7 @@ return {
 			end,
 		},
 	},
-	config = function(_, opts)
-		local oil = require("oil")
-		oil.setup(opts)
-		local keymap = vim.keymap
-		keymap.set("n", "-", oil.open, { desc = "Open Oil" })
-	end,
+	keys = {
+		{ "-", "<cmd>Oil --float<CR>", desc = "Open Oil" },
+	},
 }

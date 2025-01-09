@@ -1,5 +1,7 @@
 return {
 	{ "MunifTanjim/nui.nvim", lazy = true },
+	{ "nvim-lua/plenary.nvim" },
+	{ "nvim-tree/nvim-web-devicons" },
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		dependecies = {
