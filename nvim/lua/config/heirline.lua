@@ -2,7 +2,7 @@ local mode = require("config.components.mode")
 local oil = require("config.components.oil")
 local file = require("config.components.file")
 local layout = require("config.components.layout")
-local diagnostic = require("config.components.lsp")
+local lsp = require("config.components.lsp")
 local breadcrumbs = require("config.components.breadcrumb")
 
 local statusline = {
@@ -13,7 +13,7 @@ local statusline = {
 	layout.Space,
 	breadcrumbs,
 	layout.Align,
-	diagnostic,
+	lsp,
 }
 
 return {

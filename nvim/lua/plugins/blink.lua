@@ -18,7 +18,7 @@ return {
 			},
 			keymap = {
 				["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
-				["<Tab>"] = { "accept", "fallback" },
+				["<Tab>"] = { "select_and_accept", "fallback" },
 				["<Up>"] = { "select_prev", "fallback" },
 				["<Down>"] = { "select_next", "fallback" },
 				["<C-k>"] = { "select_prev", "fallback" },

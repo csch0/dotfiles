@@ -15,6 +15,12 @@ return {
 						action = "<leader>fr",
 					},
 					{
+						icon = " ",
+						key = "p",
+						desc = "Recent Projects",
+						action = "<leader>fp",
+					},
+					{
 						icon = " ",
 						key = "c",
 						desc = "Config",
@@ -24,6 +30,11 @@ return {
 					{ icon = "󰏗 ", key = "m", desc = "Mason", action = ":Mason" },
 					{ icon = " ", key = "q", desc = "Quit", action = ":qa" },
 				},
+			},
+			sections = {
+				{ section = "header" },
+				{ section = "keys", padding = 1, gap = 1 },
+				{ section = "startup" },
 			},
 		},
 		notifier = {},
