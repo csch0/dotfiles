@@ -7,11 +7,6 @@ local File = {
 	init = function(self)
 		self.filename = vim.api.nvim_buf_get_name(0)
 	end,
-	condition = function()
-		return not conditions.buffer_matches({
-			filetype = { "oil" },
-		})
-	end,
 }
 
 local Path = {
