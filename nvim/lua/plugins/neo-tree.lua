@@ -12,7 +12,7 @@ return {
 		opts = {
 			hide_root_node = true,
 			window = {
-				position = "right",
+				position = "left",
 			},
 		},
 		keys = {
