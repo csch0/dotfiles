@@ -37,6 +37,9 @@ return {
 					return {}
 				end,
 			},
+			signature = {
+				enabled = true,
+			},
 		},
 	},
 }
