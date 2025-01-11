@@ -1,6 +1,7 @@
 return {
-	"stevearc/oil.nvim",
+	"csch0/oil.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
+	branch = "feature/floating_window_improvements",
 	opts = {
 		default_file_explorer = true,
 		delete_to_trash = true,
@@ -16,13 +17,17 @@ return {
 			row = 0.35,
 			col = 0.5,
 			border = "rounded",
+			title = " %s ",
+			title_pos = "center",
 			win_options = {
-				winhl = "Normal:Normal,FloatBorder:Normal",
+				winhl = "NormalFloat:Normal,FloatTitle:FloatBorder",
 			},
 		},
-		preview = {
+		preview_win = {
+			title = "",
+			title_pos = "center",
 			win_options = {
-				winhl = "Normal:Normal,Float:Float",
+				winhl = "NormalFloat:Normal,FloatTitle:FloatBorder",
 			},
 		},
 		view_options = {
