@@ -1,14 +1,23 @@
 return {
 	{
+		"echasnovski/mini.pairs",
+		version = false,
+		opts = {},
+	},
+	{
 		"echasnovski/mini.files",
 		version = false,
 		opts = {
 			windows = {
 				width = 0.8,
 				height = 0.85,
-				-- 
+				--
 				width_focus = 100,
 				width_nofocus = 25,
+				--
+				max_number = 3,
+				--
+				preview = true,
 			},
 		},
 		config = function(_, opts)
