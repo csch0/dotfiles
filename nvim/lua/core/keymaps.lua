@@ -51,11 +51,12 @@ keymap.set("n", "<C-b><C-n>", "<cmd>bn<CR>", { desc = "which_key_ignore" })
 keymap.set("n", "<C-b>N", "<cmd>bp<CR>", { desc = "Go to the previous Buffer" })
 keymap.set("n", "<C-b><C-N>", "<cmd>bp<CR>", { desc = "which_key_ignore" })
 
-keymap.set("n", "<leader>bb", "<cmd>Telescope buffers sort_mru=true<cr>", { desc = "Buffers" })
+keymap.set("n", "<leader>bb", "<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>", { desc = "Buffers" })
 keymap.set("n", "<leader>bx", "<cmd>bdelete<cr>", { desc = "Close" })
 keymap.set("n", "<leader>bn", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 
-keymap.set("n", "<leader>r", "<cmd>Lazy reload heirline.nvim<cr>", { desc = "Reload Plugin" })
+keymap.set("n", "<leader>dd", "<cmd>BBFM<cr>", { desc = "Start Plugin" })
+keymap.set("n", "<leader>dr", "<cmd>Lazy reload bbfm.nvim<cr>", { desc = "Reload Plugin" })
 
 keymap.set({ "n", "v" }, "<leader>y", '"+y')
 keymap.set({ "n", "v" }, "<leader>Y", '"+Y')

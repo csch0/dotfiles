@@ -1,8 +1,9 @@
 local colors = require("catppuccin.palettes.macchiato")
 
+local conditions = require("heirline.conditions")
 local utils = require("heirline.utils")
 
-local function line_diagnostic()
+local line_diagnostic = function()
 	local lnum = vim.api.nvim_win_get_cursor(0)[1] - 1
 	local diagnostics = vim.diagnostic.get(0, { lnum = lnum })
 	-- filter diagnostic for the current line only
@@ -55,4 +56,17 @@ local Diagnostics = {
 	end,
 }
 
-return Diagnostics
+local Active = {
+	condition = conditions.lsp_attached,
+	update = { "LspAttach", "LspDetach" },
+	provider = function()
+		local names = {}
+		for _, server in pairs(vim.lsp.get_clients({ bufnr = 0 })) do
+			table.insert(names, server.name)
+		end
+		return " [" .. table.concat(names, ",") .. "]"
+	end,
+	hl = { fg = colors.blue, bold = true },
+}
+
+return { Diagnostics, Active }

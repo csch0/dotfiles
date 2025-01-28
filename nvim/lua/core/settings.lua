@@ -13,6 +13,8 @@ vim.opt.mouse = "a"
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 6
 
+vim.opt.shortmess = vim.o.shortmess .. "I"
+
 -- backspace
 vim.opt.backspace = "indent,eol,start"
 
