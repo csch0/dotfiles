@@ -55,7 +55,8 @@ keymap.set("n", "<leader>bb", "<cmd>FzfLua buffers sort_mru=true sort_lastused=t
 keymap.set("n", "<leader>bx", "<cmd>bdelete<cr>", { desc = "Close" })
 keymap.set("n", "<leader>bn", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 
-keymap.set("n", "<leader>r", "<cmd>Lazy reload oil.nvim<cr>", { desc = "Reload Plugin" })
+keymap.set("n", "<leader>dd", "<cmd>BBFM<cr>", { desc = "Start Plugin" })
+keymap.set("n", "<leader>dr", "<cmd>Lazy reload bbfm.nvim<cr>", { desc = "Reload Plugin" })
 
 keymap.set({ "n", "v" }, "<leader>y", '"+y')
 keymap.set({ "n", "v" }, "<leader>Y", '"+Y')

@@ -1,11 +1,11 @@
 return {
-	"csch0/oil.nvim",
+	"stevearc/oil.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
-	branch = "feature/floating_window_improvements",
 	opts = {
 		default_file_explorer = true,
 		delete_to_trash = true,
 		skip_confirm_for_simple_edits = true,
+		constrain_cursor = "name",
 		columns = { "icon", "permissions", "size", "mtime" },
 		watch_for_changes = true,
 		keymaps = {

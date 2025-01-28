@@ -12,7 +12,8 @@ if not vim.uv.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
+---@type LazySpec
+local spec = {
 	{
 		import = "plugins",
 		cond = function()
@@ -25,9 +26,15 @@ require("lazy").setup({
 			return vim.g.vscode
 		end,
 	},
-}, {
-	checker = { enabled = true, notify = false },
+}
+
+require("lazy").setup(spec, {
+	checker = { enabled = false },
 	change_detection = { notify = false },
+	dev = {
+		path = "~/repos/csch0",
+		patterns = { "csch0/bbfm.nvim" },
+	},
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {
