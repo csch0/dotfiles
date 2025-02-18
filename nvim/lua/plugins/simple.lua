@@ -1,4 +1,4 @@
 return {
-	"csch0/bbfm.nvim",
+	"csch0/flex.nvim",
 	opts = {},
 }

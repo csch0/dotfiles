@@ -24,18 +24,22 @@ return {
 				["<C-k>"] = { "select_prev", "fallback" },
 				["<C-j>"] = { "select_next", "fallback" },
 			},
-			sources = {
-				default = { "lsp", "path", "buffer" },
-				cmdline = function()
+			cmdline = {
+				sources = function()
 					local type = vim.fn.getcmdtype()
+
 					if type == "/" or type == "?" then
 						return { "buffer" }
 					end
 					if type == ":" or type == "@" then
 						return { "cmdline", "path" }
 					end
+
 					return {}
 				end,
+			},
+			sources = {
+				default = { "lsp", "path", "buffer" },
 			},
 			signature = {
 				enabled = true,

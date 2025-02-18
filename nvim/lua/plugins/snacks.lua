@@ -8,8 +8,11 @@
 --
 return {
 	"folke/snacks.nvim",
-	---@type snacks.dashboard.Config
 	opts = {
+		explorer = {
+			replace_netrw = true,
+		},
+		picker = {},
 		-- 	dashboard = {
 		-- 		preset = {
 		-- 			---@type snacks.dashboard.Item[]

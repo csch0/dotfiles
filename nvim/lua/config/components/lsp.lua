@@ -66,7 +66,7 @@ local Active = {
 		end
 		return " [" .. table.concat(names, ",") .. "]"
 	end,
-	hl = { fg = colors.blue, bold = true },
+	hl = { fg = colors.blue, bg = colors.mantle, bold = true },
 }
 
 return { Diagnostics, Active }

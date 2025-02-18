@@ -19,6 +19,9 @@ return {
 				--
 				preview = true,
 			},
+			options = {
+				use_as_default_explorer = false,
+			},
 		},
 		config = function(_, opts)
 			local files = require("mini.files")

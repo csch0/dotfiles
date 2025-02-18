@@ -33,7 +33,7 @@ require("lazy").setup(spec, {
 	change_detection = { notify = false },
 	dev = {
 		path = "~/repos/csch0",
-		patterns = { "csch0/bbfm.nvim" },
+		patterns = { "csch0/flex.nvim" },
 	},
 })
 
