@@ -3,6 +3,7 @@ return {
 	---@type conform.setupOpts
 	opts = {
 		formatters_by_ft = {
+			bzl = { "buildifier" },
 			lua = { "stylua" },
 			javascript = { "prettier" },
 			json = { lsp_format = "fallback" },

@@ -61,6 +61,7 @@ return {
 			},
 			{ "<leader>fb", "<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>", desc = "Buffers" },
 			{ "<leader>fd", "<cmd>FzfLua diagnostics_document<cr>", desc = "Diagnostics" },
+			{ "<leader>fD", "<cmd>FzfLua diagnostics_workspace<cr>", desc = "Diagnostics (Workspace)" },
 			{
 				"<leader>fc",
 				function()
