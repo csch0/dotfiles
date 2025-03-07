@@ -27,16 +27,22 @@ return {
 			cmdline = {
 				sources = function()
 					local type = vim.fn.getcmdtype()
-
 					if type == "/" or type == "?" then
 						return { "buffer" }
 					end
 					if type == ":" or type == "@" then
-						return { "cmdline", "path" }
+						if vim.fn.getcmdline():match("e\\s") then
+							return { "path" }
+						else
+							return { "cmdline" }
+						end
 					end
 
 					return {}
 				end,
+				completion = {
+					menu = { auto_show = true },
+				},
 			},
 			sources = {
 				default = { "lsp", "path", "buffer" },
