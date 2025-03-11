@@ -10,8 +10,11 @@ return {
 	"folke/snacks.nvim",
 	opts = {
 		explorer = {
-			replace_netrw = true,
+			config = {
+				replace_netrw = true,
+			},
 		},
+		input = {},
 		picker = {},
 		-- 	dashboard = {
 		-- 		preset = {
@@ -49,5 +52,8 @@ return {
 		-- 		},
 		-- 	},
 		notifier = {},
+	},
+	keys = {
+		{ "<leader>e", "<cmd>lua Snacks.explorer()<CR>", { desc = "Explorer" } },
 	},
 }

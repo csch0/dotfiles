@@ -19,8 +19,6 @@ return {
 			keymap = {
 				["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
 				["<Tab>"] = { "select_and_accept", "fallback" },
-				["<Up>"] = { "select_prev", "fallback" },
-				["<Down>"] = { "select_next", "fallback" },
 				["<C-k>"] = { "select_prev", "fallback" },
 				["<C-j>"] = { "select_next", "fallback" },
 			},
@@ -37,11 +35,13 @@ return {
 							return { "cmdline" }
 						end
 					end
-
 					return {}
 				end,
 				completion = {
 					menu = { auto_show = true },
+				},
+				keymap = {
+					["<Tab>"] = { "select_and_accept", "fallback" },
 				},
 			},
 			sources = {
