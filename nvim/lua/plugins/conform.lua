@@ -6,6 +6,7 @@ return {
 			bzl = { "buildifier" },
 			lua = { "stylua" },
 			javascript = { "prettier" },
+			markdown = { "prettier" },
 			json = { lsp_format = "fallback" },
 			python = { "ruff_format", "ruff_organize_imports" },
 			typescript = { "prettier" },
