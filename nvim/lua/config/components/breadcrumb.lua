@@ -18,7 +18,6 @@ local function children(data)
 end
 
 local Breadcrumbs = {
-
 	init = function(self)
 		self.data = require("aerial").get_location(true)
 		self[1] = self:new(children(self.data), 1)
