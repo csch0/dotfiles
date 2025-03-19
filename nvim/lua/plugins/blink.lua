@@ -3,6 +3,7 @@ return {
 		"saghen/blink.cmp",
 		event = "InsertEnter",
 		version = "v0.*",
+		dependencies = { "fang2hou/blink-copilot" },
 		--- @module "blink.cmp"
 		--- @type blink.cmp.Config
 		opts = {
@@ -17,10 +18,10 @@ return {
 				},
 			},
 			keymap = {
-				["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
-				["<Tab>"] = { "select_and_accept", "fallback" },
-				["<C-k>"] = { "select_prev", "fallback" },
-				["<C-j>"] = { "select_next", "fallback" },
+				-- ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
+				-- ["<Tab>"] = { "select_and_accept", "fallback" },
+				-- ["<C-k>"] = { "select_prev", "fallback" },
+				-- ["<C-j>"] = { "select_next", "fallback" },
 			},
 			cmdline = {
 				sources = function()
@@ -40,12 +41,17 @@ return {
 				completion = {
 					menu = { auto_show = true },
 				},
-				keymap = {
-					["<Tab>"] = { "select_and_accept", "fallback" },
-				},
 			},
 			sources = {
-				default = { "lsp", "path", "buffer" },
+				default = { "lsp", "path", "buffer", "copilot" },
+				providers = {
+					copilot = {
+						name = "copilot",
+						module = "blink-copilot",
+						score_offset = 100,
+						async = true,
+					},
+				},
 			},
 			signature = {
 				enabled = true,
