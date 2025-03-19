@@ -23,12 +23,6 @@ keymap.set({ "n", "i" }, "<C-s>", "<cmd>w<CR>")
 keymap.set("n", "<leader>xl", "<cmd>.lua<CR>", { desc = "Execute the current line" })
 keymap.set("n", "<leader>xx", "<cmd>source %<CR>", { desc = "Execute the current file" })
 
--- window management
-keymap.set("n", "<leader>s|", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
-keymap.set("n", "<leader>s-", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
-keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
-keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
-
 keymap.set("n", "<leader>to", "<cmd>tabnew | lua Snacks.dashboard.open()<CR>", { desc = "Open new tab" }) -- open new tab
 keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" }) -- close current tab
 keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
@@ -55,7 +49,7 @@ keymap.set("n", "<leader>bb", "<leader>fb", { desc = "Buffers" })
 keymap.set("n", "<leader>bx", "<cmd>bdelete<cr>", { desc = "Close" })
 keymap.set("n", "<leader>bn", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 
-keymap.set("n", "<leader>dd", "<cmd>FLEX<cr>", { desc = "Start Plugin" })
+keymap.set("n", "<leader>dd", "<cmd>Flex<cr>", { desc = "Start Plugin" })
 keymap.set("n", "<leader>dr", "<cmd>Lazy reload flex.nvim<cr>", { desc = "Reload Plugin" })
 
 keymap.set({ "n", "v" }, "<leader>y", '"+y')
