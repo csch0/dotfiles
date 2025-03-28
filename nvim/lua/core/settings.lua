@@ -17,6 +17,7 @@ vim.opt.spell = true
 
 -- disable startup message
 vim.opt.shortmess = vim.o.shortmess .. "I"
+vim.opt.showmode = false
 
 -- backspace
 vim.opt.backspace = "indent,eol,start"
