@@ -1,5 +1,4 @@
 vim.g.mapleader = " "
--- vim.g.maplocalleader = " "
 
 local keymap = vim.keymap
 
@@ -45,11 +44,9 @@ keymap.set("n", "<C-b><C-n>", "<cmd>bn<CR>", { desc = "which_key_ignore" })
 keymap.set("n", "<C-b>N", "<cmd>bp<CR>", { desc = "Go to the previous Buffer" })
 keymap.set("n", "<C-b><C-N>", "<cmd>bp<CR>", { desc = "which_key_ignore" })
 
-keymap.set("n", "<leader>bb", "<leader>fb", { desc = "Buffers" })
-keymap.set("n", "<leader>bx", "<cmd>bdelete<cr>", { desc = "Close" })
-keymap.set("n", "<leader>bn", "<cmd>bnext<cr>", { desc = "Next Buffer" })
+keymap.set("n", "<leader>bb", "<leader>fb", { desc = "Buffers", remap = true })
 
-keymap.set("n", "<leader>dd", "<cmd>Flex<cr>", { desc = "Start Plugin" })
+keymap.set("n", "<leader>dd", "<cmd>Flex toggle<cr>", { desc = "Start Plugin" })
 keymap.set("n", "<leader>dr", "<cmd>Lazy reload flex.nvim<cr>", { desc = "Reload Plugin" })
 
 keymap.set({ "n", "v" }, "<leader>y", '"+y')

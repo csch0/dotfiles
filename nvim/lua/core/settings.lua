@@ -49,7 +49,7 @@ vim.opt.smartcase = true
 
 vim.diagnostic.config({
 	underline = false,
-	virtual_text = false,
+	virtual_text = { current_line = true },
 	update_in_insert = false,
 	severity_sort = true,
 	signs = {
