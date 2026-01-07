@@ -1,6 +1,7 @@
 vim.pack.add({
 	{ src = "https://github.com/catppuccin/nvim", name = "catppuccin" },
 })
+
 require("catppuccin").setup({
 	flavour = "macchiato",
 	integrations = {
@@ -16,4 +17,5 @@ require("catppuccin").setup({
 		which_key = true,
 	},
 })
+
 vim.cmd.colorscheme("catppuccin-macchiato")
