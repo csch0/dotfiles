@@ -31,7 +31,6 @@ local DefaultStatusLine = {
 
 local statusline = {
 	fallthrough = false,
-	-- oil,
 	-- neotree,
 	DefaultStatusLine,
 }

@@ -6,12 +6,21 @@ local utils = require("heirline.utils")
 local Active = {
 	condition = conditions.lsp_attached,
 	update = { "LspAttach", "LspDetach" },
-	provider = function()
-		local names = {}
+	init = function(self)
+		self.names = {}
+	end,
+	on_click = {
+		callback = function(self)
+			vim.notify(table.concat(self.names, ","))
+		end,
+		name = "LSP Info",
+	},
+	provider = function(self)
+		self.names = {}
 		for _, server in pairs(vim.lsp.get_clients({ bufnr = 0 })) do
-			table.insert(names, server.name)
+			table.insert(self.names, server.name)
 		end
-		return " [" .. table.concat(names, ",") .. "]"
+		return " " .. #self.names
 	end,
 	hl = { fg = colors.blue, bg = colors.mantle, bold = true },
 }
