@@ -12,3 +12,10 @@ require("plugins/nvim-treesitter")
 require("plugins/heirline")
 require("plugins/which-key")
 require("plugins/yazi")
+
+vim.filetype.add({
+	pattern = {
+		["compose.*%.ya?ml"] = "yaml.docker-compose",
+		["docker%-compose.*%.ya?ml"] = "yaml.docker-compose",
+	},
+})

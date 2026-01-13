@@ -38,7 +38,7 @@ vim.lsp.enable("ruff")
 vim.lsp.enable("pyright")
 
 -- docker
-vim.lsp.enable("dockerls")
+vim.lsp.enable("docker_language_server")
 vim.lsp.enable("docker_compose_language_service")
 
 -- general
