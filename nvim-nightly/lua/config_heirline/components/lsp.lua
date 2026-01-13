@@ -13,7 +13,7 @@ local Active = {
 		callback = function(self)
 			vim.notify(table.concat(self.names, ","))
 		end,
-		name = "LSP Info",
+		name = "LSPInfo",
 	},
 	provider = function(self)
 		self.names = {}
