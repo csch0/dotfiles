@@ -12,6 +12,7 @@ require("conform").setup({
 		python = { "ruff_format", "ruff_organize_imports" },
 		typescript = { "prettier" },
 		svelte = { lsp_format = "fallback" },
+		yaml = { "yamlfmt" },
 	},
 	format_on_save = {
 		timeout_ms = 500,

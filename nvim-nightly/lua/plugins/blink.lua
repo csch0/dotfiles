@@ -1,5 +1,5 @@
 vim.pack.add({
-	{ src = "https://github.com/Saghen/blink.cmp", version = "v1.8.0" },
+	{ src = "https://github.com/Saghen/blink.cmp", version = "v1.9.1" },
 })
 
 require("blink.cmp").setup({

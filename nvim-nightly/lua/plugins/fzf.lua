@@ -20,7 +20,13 @@ require("fzf-lua").setup({
 vim.keymap.set("n", "<leader>ff", "<cmd>FzfLua files<cr>", { desc = "Files" })
 vim.keymap.set("n", "<leader>fh", "<cmd>FzfLua helptags<cr>", { desc = "Neovim Help" })
 vim.keymap.set("n", "<leader>fr", "<cmd>FzfLua oldfiles<cr>", { desc = "Old Files" })
-
+vim.keymap.set("n", "<leader>fg", '<cmd>FzfLua live_grep prompt="Text> "<cr>', { desc = "Text in Files" })
+-- vim.keymap.set("n", "<leader>fg",
+-- 				function()
+-- 					require("fzf-lua").live_grep({ prompt = "Text> " })
+-- 				end,
+-- 				desc = "Text",
+-- 			},
 vim.keymap.set({ "n", "v", "i" }, "<C-x><C-f>", function()
 	FzfLua.complete_path()
 end, { silent = true })
