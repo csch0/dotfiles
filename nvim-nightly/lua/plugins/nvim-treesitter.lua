@@ -1,10 +1,12 @@
 vim.pack.add({
-  { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
 })
 
 require("nvim-treesitter").setup()
 
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'lua', "help" },
-  callback = function() vim.treesitter.start() end,
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "lua", "python" },
+	callback = function()
+		vim.treesitter.start()
+	end,
 })
