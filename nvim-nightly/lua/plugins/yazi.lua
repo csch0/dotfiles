@@ -16,13 +16,14 @@ require("yazi").setup({
 		hovered_buffer = { bg = colors.base },
 	},
 	floating_window_scaling_factor = 0.85,
-	-- highlight_hovered_buffers_in_same_directory = false,
+	highlight_hovered_buffers_in_same_directory = false,
 	integrations = {
 		grep_in_directory = "fzf-lua",
 		grep_in_selected_files = "fzf-lua",
 		replace_in_directory = nil,
 		replace_in_selected_files = nil,
 	},
+	---@diagnostic disable-next-line: missing-fields
 	hooks = {
 		yazi_opened_multiple_files = require("yazi.openers").send_files_to_quickfix_list,
 	},

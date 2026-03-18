@@ -3,8 +3,9 @@ require("config.lsp")
 require("config.options")
 
 require("plugins/blink")
-require("plugins/conform")
 require("plugins/colorschema")
+require("plugins/conform")
+require("plugins/copilot")
 require("plugins/endec")
 require("plugins/fzf")
 require("plugins/lsp")
@@ -17,6 +18,6 @@ require("plugins/yazi")
 vim.filetype.add({
 	pattern = {
 		["compose.*%.ya?ml"] = "yaml.docker-compose",
-		["docker%-compose.*%.ya?ml"] = "yaml.docker-compose",
+		["docker-compose.*%.ya?ml"] = "yaml.docker-compose",
 	},
 })
