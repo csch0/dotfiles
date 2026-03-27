@@ -15,14 +15,15 @@ require("CopilotChat").setup({
 
 vim.keymap.set("n", "<leader>cc", "<cmd>CopilotChatToggle<cr>", { desc = "CopilotChat Toggle" })
 vim.keymap.set("v", "<leader>ce", "<cmd>CopilotChatExplain<cr>", { desc = "CopilotChat Explain selection" })
+vim.keymap.set("v", "<leader>co", "<cmd>CopilotChatOptimize<cr>", { desc = "CopilotChat Optimize selection" })
 vim.keymap.set("v", "<leader>cr", "<cmd>CopilotChatReview<cr>", { desc = "CopilotChat Review selection" })
 vim.keymap.set("n", "<leader>cf", "<cmd>CopilotChatFix<cr>", { desc = "CopilotChat Fix diagnostic" })
 
 vim.api.nvim_create_autocmd("BufEnter", {
 	pattern = "copilot-*",
 	callback = function()
-		vim.opt_local.relativenumber = false
-		vim.opt_local.number = false
-		vim.opt_local.conceallevel = 0
+		vim.api.nvim_set_option_value("relativenumber", false, { scope = "local" })
+		vim.api.nvim_set_option_value("number", false, { scope = "local" })
+		vim.api.nvim_set_option_value("conceallevel", 0, { scope = "local" })
 	end,
 })
