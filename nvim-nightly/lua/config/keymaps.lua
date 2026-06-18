@@ -61,6 +61,22 @@ keymap.set("n", "<C-q>", function()
 	end
 end, { desc = "Quickfix List" })
 
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "qf",
+	callback = function()
+		vim.keymap.set("n", "dd", function()
+			local qf_list = vim.fn.getqflist()
+			local line = vim.fn.line(".")
+			if qf_list[line] then
+				table.remove(qf_list, line)
+				vim.fn.setqflist(qf_list)
+				line = math.min(line, #qf_list)
+				vim.fn.cursor(line, 1)
+			end
+		end, { desc = "Remove Quickfix List Entry", buffer = true, noremap = true, silent = true })
+	end,
+})
+
 keymap.set("n", "<C-j>", "<cmd>cnext<CR>", { desc = "Next Quickfix Item" })
 keymap.set("n", "<C-k>", "<cmd>cprev<CR>", { desc = "Previous Quickfix Item" })
 

@@ -1,0 +1,30 @@
+symlinks:
+    - source: /home/ccs4fe/dotfiles/tmux/.tmux.conf
+      destination: /home/ccs4fe/.tmux.conf
+      type: symbolic
+      variables: []
+    - source: /home/ccs4fe/dotfiles/tmux/themes
+      destination: /home/ccs4fe/.tmux/themes
+      type: symbolic
+      variables: []
+    - source: /home/ccs4fe/dotfiles/tmuxp
+      destination: /home/ccs4fe/.config/tmuxp
+      type: symbolic
+      variables: []
+    - source: /home/ccs4fe/dotfiles/zsh/.zshrc
+      destination: /home/ccs4fe/.zshrc
+      type: symbolic
+      variables: []
+    - source: /home/ccs4fe/dotfiles/gitui
+      destination: /home/ccs4fe/.config/gitui
+      type: symbolic
+      variables: []
+    - source: /home/ccs4fe/dotfiles/lazygit
+      destination: /home/ccs4fe/.config/lazygit
+      type: symbolic
+      variables: []
+    - source: /home/ccs4fe/dotfiles/nvim-nightly
+      destination: /home/ccs4fe/.config/nvim
+      type: symbolic
+      variables: []
+templates: []

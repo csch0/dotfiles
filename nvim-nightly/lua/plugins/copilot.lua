@@ -1,7 +1,7 @@
 vim.pack.add({
-	{ src = "https://github.com/nvim-lua/plenary.nvim" },
-	{ src = "https://github.com/zbirenbaum/copilot.lua" },
-	{ src = "https://github.com/CopilotC-Nvim/CopilotChat.nvim" },
+	"https://github.com/nvim-lua/plenary.nvim",
+	"https://github.com/zbirenbaum/copilot.lua",
+	"https://github.com/CopilotC-Nvim/CopilotChat.nvim",
 })
 
 require("copilot").setup()

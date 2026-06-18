@@ -1,0 +1,25 @@
+settings:
+  default_type: symbolic
+
+git:
+  files:
+  - source: gitui/
+    destination: ~/.config/gitui/
+  - source: lazygit/
+    destination: ~/.config/lazygit/
+nvim:
+  files:
+  - source: nvim-nightly/
+    destination: ~/.config/nvim/
+tmux:
+  files:
+  - source: tmux/.tmux.conf
+    destination: ~/.tmux.conf
+  - source: tmux/themes/
+    destination: ~/.tmux/themes/
+  - source: tmuxp/
+    destination: ~/.config/tmuxp/
+zsh:
+  files:
+  - source: zsh/.zshrc
+    destination: ~/.zshrc
