@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/share/bob/nvim-bin:$PATH
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -78,12 +79,6 @@ setopt HIST_REDUCE_BLANKS # Remove superfluous blanks before recording entry.
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git sudo fzf)
 
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -103,28 +98,22 @@ fi
 # the $ZSH_CUSTOM folder, with .zsh extension. Examples:
 # - $ZSH_CUSTOM/aliases.zsh
 # - $ZSH_CUSTOM/macos.zsh
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
+
 alias cat="bat"
 
 alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
 
-alias a-bosch="~/dotfiles/scripts/login_bosch.sh"
-alias a-rbadas="~/dotfiles/scripts/login_rbadas.sh"
-
 alias p="pnpm"
-
-alias k="kubectl"
-alias arc_connect="~/repos/data-loop-platform/arena-fleet-management/infra/azure/operator-tooling/utils/arc_connect.sh"
-alias arc_status="~/repos/data-loop-platform/arena-fleet-management/infra/azure/operator-tooling/utils/arc_status.sh"
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(direnv hook zsh)"
 eval "$(zoxide init zsh)"
 
+export FZF_BASE=$HOMEBREW_PREFIX/opt/fzf
+
 source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+source $ZSH/oh-my-zsh.sh

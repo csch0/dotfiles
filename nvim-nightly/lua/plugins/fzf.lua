@@ -21,7 +21,7 @@ fzf.setup({
 	files = {
 		cwd_prompt = false,
 	},
-	ui_select = true,
+	ui_select = {},
 })
 
 vim.keymap.set("n", "<leader>ff", fzf.files, { desc = "Files" })
