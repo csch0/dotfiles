@@ -1,11 +1,7 @@
-return {
-	{
-		"rebelot/heirline.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		event = "UiEnter",
-		config = function()
-			local config = require("config.heirline")
-			require("heirline").setup(config)
-		end,
-	},
-}
+vim.pack.add({
+	"https://github.com/rebelot/heirline.nvim",
+	"https://github.com/nvim-tree/nvim-web-devicons",
+})
+
+local config = require("config_heirline.heirline")
+require("heirline").setup(config)

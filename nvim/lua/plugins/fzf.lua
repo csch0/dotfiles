@@ -1,98 +1,37 @@
-local fzf_oldprojects = function(opts)
-	local fzf_lua = require("fzf-lua")
-	local fzf_lua_path = require("fzf-lua.path")
-	opts = opts or {}
-	opts.prompt = "> "
-	opts.winopts = {
-		title = " OldProjects ",
-		title_pos = "center",
+vim.pack.add({
+	"https://github.com/ibhagwan/fzf-lua",
+	"https://github.com/nvim-tree/nvim-web-devicons",
+})
+
+local fzf = require("fzf-lua")
+fzf.setup({
+	winopts = {
+		backdrop = 100,
+		title_flags = false,
+		width = 0.85,
+		height = 0.85,
+		row = 0.5,
+		col = 0.5,
+		---@diagnostic disable-next-line: missing-fields
 		preview = {
-			hidden = true,
-		},
-	}
-	opts.fzf_opts = {
-		["--preview"] = "ls {}",
-		["--preview-window"] = "nohidden,50%",
-	}
-	opts.actions = {
-		["default"] = function(selected)
-			local dir = selected[1]
-			vim.notify("CWD: " .. dir)
-			vim.cmd("cd " .. dir)
-		end,
-	}
-
-	local dirs = { vim.fn.expand("~") }
-	local snacks = require("snacks")
-
-	for file in snacks.dashboard.oldfiles({}) do
-		local dir = snacks.git.get_root(file)
-		if dir and not vim.tbl_contains(dirs, dir) then
-			table.insert(dirs, dir)
-		end
-	end
-
-	fzf_lua.fzf_exec(dirs, opts)
-end
-
-return {
-	{
-		"ibhagwan/fzf-lua",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		opts = {
-			winopts = {
-				backdrop = 100,
-				preview = {
-					scrollbar = false,
-					title = false,
-				},
-			},
-			files = {
-				cwd_prompt = false,
-			},
-		},
-		keys = {
-			{
-				"<leader>fp",
-				function()
-					fzf_oldprojects({})
-				end,
-				desc = "Projects",
-			},
-			{ "<leader>fb", "<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>", desc = "Buffers" },
-			{ "<leader>fd", "<cmd>FzfLua diagnostics_document<cr>", desc = "Diagnostics" },
-			{ "<leader>fD", "<cmd>FzfLua diagnostics_workspace<cr>", desc = "Diagnostics (Workspace)" },
-			{
-				"<leader>fc",
-				function()
-					require("fzf-lua").files({
-						cwd = vim.fn.stdpath("config"),
-						prompt = "Config> ",
-						no_header = true,
-					})
-				end,
-				desc = "Config Files",
-			},
-			{ "<leader>ff", "<cmd>FzfLua files<cr>", desc = "Files" },
-			{ "<leader>fh", "<cmd>FzfLua helptags<cr>", desc = "Help" },
-			{
-				"<leader>fg",
-				function()
-					require("fzf-lua").live_grep({ prompt = "Text> " })
-				end,
-				desc = "Text",
-			},
-			{ "<leader>fk", "<cmd>FzfLua keymaps<cr>", desc = "Keymaps" },
-
-			{
-				"<leader>f.",
-				function()
-					require("fzf-lua").files({ cwd = "~/dotfiles/", prompt = "Dotfiles> ", no_header = true })
-				end,
-				desc = "Dotfiles",
-			},
-			{ "<leader>fr", "<cmd>FzfLua oldfiles<cr>", desc = "Recent files" },
-			{ "<leader>ft", "<cmd>FzfLua treesitter<cr>", desc = "Treesitter" },
+			scrollbar = false,
+			title = false,
 		},
 	},
-}
+	files = {
+		cwd_prompt = false,
+	},
+	ui_select = {},
+})
+
+vim.keymap.set("n", "<leader>ff", fzf.files, { desc = "Files" })
+vim.keymap.set("n", "<leader>fb", fzf.buffers, { desc = "Buffers" })
+vim.keymap.set("n", "<leader>fh", fzf.helptags, { desc = "Neovim Help" })
+vim.keymap.set("n", "<leader>fr", fzf.oldfiles, { desc = "Old Files" })
+vim.keymap.set("n", "<leader>fg", fzf.live_grep, { desc = "Text in Files" })
+
+vim.keymap.set("n", "<leader>f.", function()
+	fzf.files({ cwd = "~/dotfiles/", winopts = { title = " Dotfiles " } })
+end, { desc = "Dotfiles" })
+
+vim.keymap.set({ "n", "v", "i" }, "<C-x><C-f>", fzf.complete_path, { silent = true })
