@@ -105,7 +105,10 @@ alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
 
+alias dgit="lazygit -p ~/dotfiles/"
+
 alias p="pnpm"
+alias t="~/go/bin/ttpro --data ~/.config/time-tracker-data" 
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(direnv hook zsh)"
@@ -117,3 +120,5 @@ source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source $ZSH/oh-my-zsh.sh
+
+set -a; source ~/.env; set +a
