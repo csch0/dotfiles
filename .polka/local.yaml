@@ -1,5 +1,6 @@
 packages:
-- git
-- nvim
-- tmux
-- zsh
+  - git
+  - nvim
+  - tmux
+  - zsh
+  - yazi

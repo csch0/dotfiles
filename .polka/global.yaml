@@ -1,21 +1,24 @@
 settings:
   default_type: symbolic
-
 git:
   files:
-  - source: lazygit/
-    destination: ~/.config/lazygit/
+    - source: lazygit/
+      destination: ~/.config/lazygit/
+yazi:
+  files:
+    - source: yazi/
+      destination: ~/.config/yazi/
 nvim:
   files:
-  - source: nvim/
-    destination: ~/.config/nvim/
+    - source: nvim/
+      destination: ~/.config/nvim/
 tmux:
   files:
-  - source: tmux/.tmux.conf
-    destination: ~/.tmux.conf
-  - source: tmux/themes/
-    destination: ~/.tmux/themes/
+    - source: tmux/.tmux.conf
+      destination: ~/.tmux.conf
+    - source: tmux/themes/
+      destination: ~/.tmux/themes/
 zsh:
   files:
-  - source: zsh/.zshrc
-    destination: ~/.zshrc
+    - source: zsh/.zshrc
+      destination: ~/.zshrc
