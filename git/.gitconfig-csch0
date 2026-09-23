@@ -1,0 +1,6 @@
+[user]
+    name = csch0
+    email = schoning.christoph@gmail.com
+
+[credential "https://github.com"]
+    username = csch0

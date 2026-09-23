@@ -1,0 +1,6 @@
+[includeIf "hasconfig:remote.*.url:https://github.com/csch0/**"]
+  path = .gitconfig-csch0
+[includeIf "hasconfig:remote.*.url:git@github.com:csch0/**"]
+  path = .gitconfig-csch0
+[includeIf "hasconfig:remote.*.url:git@bitbucket.com:proalpha/**"]
+  path = .gitconfig-proalpha
