@@ -1,0 +1,9 @@
+[[mgr.prepend_keymap]]
+on   = [ "g", "." ]
+run  = "cd ~/dotfiles"
+desc = "Cd to ~/dotfiles"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "w" ]
+run  = "cd /mnt/c/Users/schoening_c"
+desc = "Cd to Windows Home"
