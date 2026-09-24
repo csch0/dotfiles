@@ -1,4 +1,13 @@
 [[mgr.prepend_keymap]]
+on  = [ "a" ]
+run = "noop"
+
+[[mgr.prepend_keymap]]
+on   = [ "i" ]
+run  = "create"
+desc = "Cd to ~/dotfiles"
+
+[[mgr.prepend_keymap]]
 on   = [ "g", "." ]
 run  = "cd ~/dotfiles"
 desc = "Cd to ~/dotfiles"
